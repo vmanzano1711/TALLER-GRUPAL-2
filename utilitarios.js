@@ -7,7 +7,7 @@ mostrarImagen=function(idComponente,rutaImagen){
 mostrarTexto=function(idComponente,mensaje){
     let componente;
     componente=document.getElementById(idComponente);
-    componente.innerText = mensaje;
+    componente.innerHTML  = mensaje;
 }
 mostrarTextoEnCaja = function(idComponente,mensaje){
     let componente;

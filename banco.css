@@ -1,95 +1,182 @@
-body{
-   
+/* === ESTILOS GENERALES === */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f7f8;
+    margin: 0;
+    padding: 0;
 }
-.principal{
+
+/* === CONTENEDOR PRINCIPAL === */
+.principal {
     display: flex;
-    
+    min-height: 100vh;
 }
-.menu{
-    display: flex;
-    flex:1;
-   
-    flex-direction: column;
-    align-items: center;
-    height: 500px;
-    
-}
-.contenido{
-    display: flex;
-    flex:5;
-   
-    align-items: center;
-    flex-direction: column;
-}
-.contenedorLogo{
+
+/* === MENÚ LATERAL === */
+.menu {
     display: flex;
     flex: 1;
     flex-direction: column;
     align-items: center;
+    justify-content: space-between;
+    background-color: #043031;
+    color: white;
+    padding: 20px 0;
+    box-shadow: 2px 0 10px rgba(0,0,0,0.2);
 }
-.contenedorInfoGrupo{
+
+/* Logo */
+.contenedorLogo img {
+    max-width: 120px;
+    border-radius: 10px;
+}
+
+/* Botones del menú */
+.contenedorBotones {
     display: flex;
-    flex: 1;
-   
+    flex: 4;
     flex-direction: column;
+    justify-content: center;
+    gap: 15px;
 }
 
+.boton {
+    background-color: #0b7970;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
 
-.contenedorBotones{
+.boton:hover {
+    background-color: #0fa58f;
+}
+
+/* Información del grupo */
+.contenedorInfoGrupo {
     display: flex;
-    flex:4;
     flex-direction: column;
-    justify-content: center;
+    text-align: center;
+    gap: 5px;
+    font-size: 13px;
+    opacity: 0.9;
 }
-.boton{
-    margin-top: 10px;
-}
-.contenedorTexto{
-    display: flex;
-    flex-direction: row;
-    align-items: start;
-    justify-content: center;
-    flex:1;
 
-    width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px;
-  
-}
-.contenedorAcciones{
+/* === SECCIÓN DE CONTENIDO === */
+.contenido {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex: 5;
+    flex-direction: column;
     align-items: center;
-    flex:1;
+    padding: 30px;
+    background-color: white;
 }
-.etiquetaTexto{
+
+/* === SECCIÓN SUPERIOR (formulario) === */
+.superior {
+    width: 80%;
+    background-color: #e8f5f4;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.titulo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #043031;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+/* === CAMPOS DE TEXTO === */
+.contenedorTexto {
     display: flex;
-    flex:1;
-    justify-content: flex-end;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.etiquetaTexto {
+    flex: 1;
+    text-align: right;
+    font-weight: bold;
     margin-right: 10px;
-
+    color: #043031;
 }
 
-.cajaTexto{
-    display: flex;
-    flex:1;
-    justify-content: flex-start;
+.cajaTexto {
+    flex: 2;
 }
-.superior{
-    margin-top: 40px;
-    display: flex;
-    flex:1;
-    flex-direction: column;
+
+.caja {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
 }
-.inferior{
+
+/* === BOTONES DE ACCIÓN === */
+.contenedorAcciones {
     display: flex;
-    flex:1;
     justify-content: center;
+    margin-top: 15px;
+}
+
+#btnGuardarCuenta {
+    background-color: #0b7970;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-weight: bold;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#btnGuardarCuenta:hover {
+    background-color: #0fa58f;
+}
+
+/* === TABLAS === */
+.inferior {
     margin-top: 30px;
+    width: 80%;
+    text-align: center;
 }
-.titulo{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+th {
+    background-color: #043031;
+    color: white;
+    padding: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+td {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+tr:nth-child(even) {
+    background-color: #f5fafa;
+}
+
+tr:hover {
+    background-color: #dff3f1;
+}
+
+/* === OCULTAR SECCIONES === */
+#divTransacciones, #divMovimientos {
+    display: none;
 }
