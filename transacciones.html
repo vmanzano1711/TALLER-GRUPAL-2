@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <html>
-
 <head>
+    <meta charset="UTF-8">
+    <title>Banco Taller Grupal</title>
     <link href="banco.css" rel="stylesheet" />
     <script src="transacciones.js"></script>
-    <script src="utilitarios.js"></script>
 </head>
 
 <body onload="cargar();">
@@ -14,9 +14,9 @@
                 <img src="./imagenes/logoKrakeDev.png" width="80%" />
             </div>
             <div class="contenedorBotones">
-                <input type="button" value="CUENTAS" class="boton" />
-                <input type="button" value="TRANSACCIONES" class="boton" />
-                <input type="button" value="MOVIMIENTOS" class="boton" />
+                <input type="button" value="CUENTAS" class="boton" onclick="mostrarComponente('divCuentas'); ocultarComponente('divTransacciones'); ocultarComponente('divMovimientos');"/>
+                <input type="button" value="TRANSACCIONES" class="boton" onclick="mostrarComponente('divTransacciones'); ocultarComponente('divCuentas'); ocultarComponente('divMovimientos');"/>
+                <input type="button" value="MOVIMIENTOS" class="boton" onclick="mostrarComponente('divMovimientos'); ocultarComponente('divTransacciones'); ocultarComponente('divCuentas');"/>
             </div>
             <div class="contenedorInfoGrupo">
                 <div>INTEGRANTE 1</div>
@@ -24,83 +24,82 @@
                 <div>INTEGRANTE 3</div>
             </div>
         </div>
+
+        <!-- ==================== CUENTAS ==================== -->
         <div class="contenido" id="divCuentas">
             <div class="superior">
                 <div class="titulo">CUENTAS</div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">CAMPO 1</div>
+                    <div class="etiquetaTexto">Número de Cuenta</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" class="caja" id="txtNumeroCuentaC"/>
                     </div>
                 </div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">CAMPO 2</div>
+                    <div class="etiquetaTexto">Cédula</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" class="caja" id="txtCedula"/>
                     </div>
                 </div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">CAMPO 3</div>
+                    <div class="etiquetaTexto">Nombre</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" class="caja" id="txtNombre"/>
                     </div>
                 </div>
                 <div class="contenedorAcciones">
-                    <input type="button" value="GUARDAR" />
+                    <input type="button" value="GUARDAR" onclick="guardarCuenta()"/>
                 </div>
             </div>
 
             <div class="inferior">
-                TABLA
+                <div id="tablaCuentas">TABLA</div>
             </div>
-
         </div>
+
+        <!-- ==================== TRANSACCIONES ==================== -->
         <div class="contenido" id="divTransacciones">
             <div class="superior">
                 <div class="titulo">TRANSACCIONES</div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">CAMPO 1</div>
+                    <div class="etiquetaTexto">Número de Cuenta</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" class="caja" id="txtNumeroCuentaT" />
                     </div>
                 </div>
                 <div class="contenedorAcciones">
-                    <input type="button" value="BUSCAR" />
+                    <input type="button" value="BUSCAR" onclick="ejecutarBusqueda()" />
                 </div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">CAMPO 2</div>
+                    <div class="etiquetaTexto">Monto</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" class="caja" id="txtMonto" />
                     </div>
                 </div>
                 <div class="contenedorAcciones">
-                    <input type="button" value="DEPOSITAR" />
-                    <input type="button" value="RETIRAR" />
-                    
+                    <input type="button" value="DEPOSITAR" onclick="ejecutarDeposito()" />
+                    <input type="button" value="RETIRAR" onclick="ejecutarRetiro()" />
                 </div>
-              
+                <div id="infoCuenta" style="margin-top:10px; font-weight:bold;"></div>
             </div>
         </div>
+
+        <!-- ==================== MOVIMIENTOS ==================== -->
         <div class="contenido" id="divMovimientos">
-          
             <div class="inferior">
                 <div class="titulo">MOVIMIENTOS</div>
                 <div class="contenedorTexto">
-                    <div class="etiquetaTexto">CAMPO 1</div>
+                    <div class="etiquetaTexto">Número de Cuenta</div>
                     <div class="cajaTexto">
-                        <input type="text" class="caja" />
+                        <input type="text" class="caja" id="txtNumeroCuentaM" />
                     </div>
                 </div>
                 <div class="contenedorAcciones">
-                    <input type="button" value="BUSCAR" />                    
+                    <input type="button" value="BUSCAR" onclick="mostrarMovimientos()" />                    
                 </div>
-                <div id="tablaMovimientos">
-                    TABLA
-                </div>
+                <div id="tablaMovimientos">TABLA</div>
             </div>
-
         </div>
     </div>
 </body>
-
 </html>

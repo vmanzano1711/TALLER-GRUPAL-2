@@ -1,95 +1,190 @@
-body{
-   
+/* ==================== ESTILOS GENERALES ==================== */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f3f4f7;
+    margin: 0;
+    padding: 0;
 }
-.principal{
+
+.principal {
     display: flex;
-    
+    height: 100vh;
 }
-.menu{
-    display: flex;
-    flex:1;
-   
-    flex-direction: column;
-    align-items: center;
-    height: 500px;
-    
-}
-.contenido{
-    display: flex;
-    flex:5;
-   
-    align-items: center;
-    flex-direction: column;
-}
-.contenedorLogo{
+
+/* ==================== MENÚ LATERAL ==================== */
+.menu {
     display: flex;
     flex: 1;
     flex-direction: column;
     align-items: center;
-}
-.contenedorInfoGrupo{
-    display: flex;
-    flex: 1;
-   
-    flex-direction: column;
+    justify-content: space-between;
+    background-color: #1e293b; /* azul oscuro */
+    color: white;
+    padding: 20px 0;
+    border-right: 3px solid #0f172a;
 }
 
-
-.contenedorBotones{
-    display: flex;
-    flex:4;
-    flex-direction: column;
-    justify-content: center;
-}
-.boton{
-    margin-top: 10px;
-}
-.contenedorTexto{
-    display: flex;
-    flex-direction: row;
-    align-items: start;
-    justify-content: center;
-    flex:1;
-
-    width: 100%;
-    margin-top: 10px;
+.contenedorLogo img {
+    border-radius: 8px;
     margin-bottom: 10px;
-  
-}
-.contenedorAcciones{
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    flex:1;
-}
-.etiquetaTexto{
-    display: flex;
-    flex:1;
-    justify-content: flex-end;
-    margin-right: 10px;
-
 }
 
-.cajaTexto{
+.contenedorBotones {
     display: flex;
-    flex:1;
-    justify-content: flex-start;
-}
-.superior{
-    margin-top: 40px;
-    display: flex;
-    flex:1;
     flex-direction: column;
-}
-.inferior{
-    display: flex;
-    flex:1;
-    justify-content: center;
-    margin-top: 30px;
-}
-.titulo{
-    display: flex;
-    justify-content: center;
     align-items: center;
+    flex: 3;
+}
+
+.boton {
+    background-color: #3b82f6;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    margin: 8px 0;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 140px;
+}
+
+.boton:hover {
+    background-color: #2563eb;
+}
+
+.contenedorInfoGrupo {
+    text-align: center;
+    font-size: 14px;
+}
+
+/* ==================== CONTENIDO PRINCIPAL ==================== */
+.contenido {
+    display: flex;
+    flex: 4;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #ffffff;
+}
+
+.superior, .inferior {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    background-color: #f9fafb;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+
+.titulo {
+    font-size: 20px;
+    font-weight: bold;
+    color: #1e293b;
+    margin-bottom: 20px;
+}
+
+/* ==================== FORMULARIOS ==================== */
+.contenedorTexto {
+    display: flex;
+    width: 100%;
+    margin: 8px 0;
+    align-items: center;
+}
+
+.etiquetaTexto {
+    flex: 1;
+    text-align: right;
+    margin-right: 10px;
+    font-weight: bold;
+    color: #334155;
+}
+
+.cajaTexto {
+    flex: 2;
+}
+
+.caja {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #94a3b8;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+.contenedorAcciones {
+    display: flex;
+    justify-content: center;
+    margin-top: 15px;
+}
+
+.contenedorAcciones input[type="button"] {
+    background-color: #22c55e;
+    border: none;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 5px;
+    margin: 0 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.contenedorAcciones input[type="button"]:hover {
+    background-color: #16a34a;
+}
+
+/* ==================== TABLAS ==================== */
+#tablaMovimientos table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px;
+    background-color: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#tablaMovimientos th {
+    background-color: #3b82f6;
+    color: white;
+    padding: 8px;
+    text-align: center;
+}
+
+#tablaMovimientos td {
+    padding: 8px;
+    border-bottom: 1px solid #e2e8f0;
+    text-align: center;
+}
+
+#tablaMovimientos tr:nth-child(even) {
+    background-color: #f1f5f9;
+}
+
+/* ==================== INFO EXTRA ==================== */
+#infoCuenta {
+    margin-top: 15px;
+    font-weight: bold;
+    color: #1e40af;
+}
+
+/* ==================== RESPONSIVE ==================== */
+@media (max-width: 768px) {
+    .principal {
+        flex-direction: column;
+    }
+
+    .menu {
+        flex-direction: row;
+        height: auto;
+        justify-content: space-around;
+        border-right: none;
+        border-bottom: 3px solid #0f172a;
+    }
+
+    .contenido {
+        flex: 1;
+        padding: 10px;
+    }
 }
